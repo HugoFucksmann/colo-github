@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
-import CardOne from './componets/cardOne';
-import { appTheme } from './theme/appTheme';
-import { ThemeProvider } from '@mui/system';
-import BarraEncabezado from './componets/barraEncabezado';
-import vqgan from './assets/vqgan.png';
-import GameCard from './componets/cardMicaela';
+import logo from "./logo.svg";
+import "./App.css";
+import CardOne from "./componets/cardOne";
+import { appTheme } from "./theme/appTheme";
+import { ThemeProvider } from "@mui/system";
+import BarraEncabezado from "./componets/barraEncabezado";
+
+import CarouselFullScreen from "./componets/carouselFullScreen";
+import LoginForm from "./componets/loginForm";
 
 function App() {
-	return (
-		<ThemeProvider theme={appTheme}>
-			<div className='App-header'>
-				<BarraEncabezado
-					title='este es el titulo'
-					pages={['quienes somos', 'contactenos', 'cursos']}
-				/>
-				<div style={{ height: '40vh', width: '30vh' }}></div>
-			</div>
-		</ThemeProvider>
-	);
+  return (
+    <ThemeProvider theme={appTheme}>
+      <div className="singleScreenCenterCont">
+        <BarraEncabezado
+          title="este es el titulo"
+          pages={["quienes somos", "contactenos", "cursos"]}
+        />
+        <LoginForm />
+        <div>
+          <CardOne>CardOne</CardOne>
+        </div>
+      </div>
+    </ThemeProvider>
+  );
 }
 
 export default App;
