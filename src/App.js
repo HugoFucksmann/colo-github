@@ -1,25 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
+import CardOne from './componets/cardOne';
+import { appTheme } from './theme/appTheme';
+import { ThemeProvider } from '@mui/system';
+import BarraEncabezado from './componets/barraEncabezado';
+import vqgan from './assets/vqgan.png';
+import GameCard from './componets/cardMicaela';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<ThemeProvider theme={appTheme}>
+			<div className='App-header'>
+				<BarraEncabezado
+					title='este es el titulo'
+					pages={['quienes somos', 'contactenos', 'cursos']}
+				/>
+				<div style={{ height: '40vh', width: '30vh' }}></div>
+			</div>
+		</ThemeProvider>
+	);
 }
 
 export default App;
