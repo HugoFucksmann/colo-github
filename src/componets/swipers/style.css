@@ -1,0 +1,6 @@
+.swiper-button-prev {
+  transform: translateX(-80%) scale(0.8);
+}
+.swiper-button-next {
+  transform: translateX(50%) scale(0.8);
+}
