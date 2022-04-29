@@ -1,22 +1,12 @@
 import "./App.css";
 import { appTheme } from "./theme/appTheme";
 import { ThemeProvider } from "@mui/system";
-
-import ImgSwiper2 from "./componets/swipers/imgSwiper2";
-import ImgSwiper1 from "./componets/swipers/imgSwiper1";
-import CardSwiper from "./componets/swipers/cardSwiper";
+import SinglePage from "./colo/singlePage";
 
 function App() {
   return (
     <ThemeProvider theme={appTheme}>
-      <div
-        style={{
-          margin: "auto",
-          width: "60%",
-        }}
-      >
-        <CardSwiper />
-      </div>
+      <SinglePage />
     </ThemeProvider>
   );
 }
