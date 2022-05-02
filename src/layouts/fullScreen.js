@@ -1,5 +1,14 @@
+import { styled } from '@mui/material';
+
 const FullScreen = (props) => {
-  return <div {...props}>{props.children}</div>;
+	return (
+		<FullCenterScreen {...props}>{props.children}</FullCenterScreen>
+	);
 };
+
+const FullCenterScreen = styled('div')(({ theme }) => ({
+	minHeight: '100vh',
+	display: 'flex',
+}));
 
 export default FullScreen;
