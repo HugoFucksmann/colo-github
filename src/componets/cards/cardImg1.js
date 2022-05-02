@@ -1,26 +1,22 @@
 import * as React from "react";
 import { styled } from "@mui/system";
-
+import PropTypes from "prop-types";
 import noimg from "../../assets/noimg.png";
 import { Button, Typography } from "@mui/material";
 
 const CardImg1 = (props) => {
-  const {
-    title = "este es el titulo",
-    subTitle = "este es el subtitulo",
-    btnTxt = "compartir",
-    img = noimg,
-  } = props;
   return (
     <CardCont {...props}>
       <div style={{ height: "60%" }}>
-        <StyledImg alt="imagen" src={img} />
+        <StyledImg alt="imagen" src={props.img} />
 
         <StyledText>
           <Typography style={{ fontSize: "3.5vh", fontWeight: "bold" }}>
-            {title}
+            {props.title}
           </Typography>
-          <Typography style={{ fontSize: "2.5vh" }}>{subTitle}</Typography>
+          <Typography style={{ fontSize: "2.5vh" }}>
+            {props.subtitle}
+          </Typography>
         </StyledText>
       </div>
       <Button
@@ -33,7 +29,7 @@ const CardImg1 = (props) => {
           width: "90%",
         }}
       >
-        {btnTxt}
+        {props.btntxt}
       </Button>
     </CardCont>
   );
@@ -72,5 +68,19 @@ const StyledText = styled("div")(({ theme }) => ({
   marginBottom: 20,
   marginLeft: 5,
 }));
+
+CardImg1.propTypes = {
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
+  btntxt: PropTypes.string.isRequired,
+  img: PropTypes.node.isRequired,
+};
+
+CardImg1.defaultProps = {
+  title: "este es el titulo",
+  subtitle: "este es el subtitulo",
+  btntxt: "compartir",
+  img: noimg,
+};
 
 export default React.memo(CardImg1);
