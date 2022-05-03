@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 	header: {
 		position: 'absolute',
 	},
-	landing: { height: '90vh' },
+	landing: { height: '100vh' },
 	body: {
 		padding: 30,
 		paddingRight: '10%',
