@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
 		padding: 30,
 		paddingRight: '10%',
 		paddingLeft: '10%',
+		backgroundColor: 'red',
 	},
 	footer: { height: '20vh' },
 }));

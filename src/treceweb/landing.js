@@ -1,4 +1,3 @@
-import CarouselFullScreen from './../componets/carouselFullScreen';
 import { Fade, styled, Typography } from '@mui/material';
 const LandingTrece = (props) => {
 	return (
@@ -44,5 +43,13 @@ const TitleTextDiv = styled('div')(({ theme, data }) => ({
 	justifyContent: 'center',
 	textAlign: 'left',
 }));
+
+LandingTrece.defaultProps = {
+	data: {
+		txtT: 'No mas derrames o bolsas rotas',
+		txt1: 'eleginos y logra el mejor resultado en las tareas de todos los dias',
+		img: '',
+	},
+};
 
 export default LandingTrece;

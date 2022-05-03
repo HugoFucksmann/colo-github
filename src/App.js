@@ -1,5 +1,5 @@
 import './App.css';
-import { appTheme } from './theme/appTheme';
+import appTheme from './theme/appTheme';
 import { ThemeProvider } from '@mui/system';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/index';
