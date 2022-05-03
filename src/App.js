@@ -4,6 +4,13 @@ import { ThemeProvider } from '@mui/system';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/index';
 import TreceProvider from './treceweb/treceContext';
+import {
+	CircularProgress,
+	LinearProgress,
+	Typography,
+} from '@mui/material';
+
+import logoo from './assets/treceweb/Logo-Plasticos.png';
 
 function App() {
 	return (

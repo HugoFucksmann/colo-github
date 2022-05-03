@@ -62,14 +62,21 @@ const appTheme = createTheme({
 
 //*-------- typography-------------------
 
+appTheme.typography.h1 = {
+	fontSize: '2.8rem',
+	fontFamily: 'museoSansRoundedBold',
+	color: '#5f6f81',
+};
+
 appTheme.typography.h2 = {
 	fontSize: '1.8rem',
 	fontFamily: 'museoSansRoundedBold',
+	color: '#5f6f81',
 };
 appTheme.typography.h4 = {
 	fontSize: '1.2em',
 	fontFamily: 'museoSlab',
-	color: ' #5f6f81',
+	color: '#5f6f81',
 };
 //*-------------------------------------------
 

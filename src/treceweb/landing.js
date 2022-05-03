@@ -4,21 +4,14 @@ const LandingTrece = (props) => {
 		<LayoutLanding {...props}>
 			<TitleTextDiv>
 				<Fade in={true} timeout={700}>
-					<div
-						dangerouslySetInnerHTML={{
-							__html: props.data.txtT.toUpperCase(),
-						}}
-						style={{
-							fontSize: '3.4vw',
-						}}
-					/>
+					<Typography variant='h1'>{props.data.txtTa}</Typography>
 				</Fade>
+				<Fade in={true} timeout={700}>
+					<Typography variant='h1'>{props.data.txtTb}</Typography>
+				</Fade>
+				<br />
 				<Fade in={true} timeout={1400}>
-					<Typography
-						style={{
-							fontSize: '1.6vw',
-						}}
-					>
+					<Typography variant='h4'>
 						{props.data.txt1.toUpperCase()}
 					</Typography>
 				</Fade>
@@ -46,7 +39,8 @@ const TitleTextDiv = styled('div')(({ theme, data }) => ({
 
 LandingTrece.defaultProps = {
 	data: {
-		txtT: 'No mas derrames o bolsas rotas',
+		txtTa: 'No mas derrames o bolsas rotas',
+		txtTb: 'No mas derrames o bolsas rotas',
 		txt1: 'eleginos y logra el mejor resultado en las tareas de todos los dias',
 		img: '',
 	},

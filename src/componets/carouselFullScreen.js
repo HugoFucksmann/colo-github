@@ -36,8 +36,8 @@ export default function CarouselFullScreen(props) {
 				modules={[EffectFade, Mousewheel, Pagination]}
 				className='mySwiper'
 			>
-				{landingData.map((swipData) => (
-					<SwiperSlide key={swipData.txtT}>
+				{landingData.map((swipData, i) => (
+					<SwiperSlide key={i}>
 						<LandingTrece data={swipData} />
 					</SwiperSlide>
 				))}
