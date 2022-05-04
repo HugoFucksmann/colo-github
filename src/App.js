@@ -1,31 +1,24 @@
-import './App.css';
-import appTheme from './theme/appTheme';
-import { ThemeProvider } from '@mui/system';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './pages/index';
-import TreceProvider from './treceweb/treceContext';
-import {
-	CircularProgress,
-	CssBaseline,
-	LinearProgress,
-	Typography,
-} from '@mui/material';
-
-import logoo from './assets/treceweb/Logo-Plasticos.png';
+import "./App.css";
+import appTheme from "./theme/appTheme";
+import { ThemeProvider } from "@mui/system";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/index";
+import TreceProvider from "./treceweb/treceContext";
+import { CssBaseline } from "@mui/material";
 
 function App() {
-	return (
-		<ThemeProvider theme={appTheme}>
-			<CssBaseline />
-			<TreceProvider>
-				<BrowserRouter>
-					<Routes>
-						<Route path='/' element={<Home />} />
-					</Routes>
-				</BrowserRouter>
-			</TreceProvider>
-		</ThemeProvider>
-	);
+  return (
+    <ThemeProvider theme={appTheme}>
+      <CssBaseline />
+      <TreceProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </BrowserRouter>
+      </TreceProvider>
+    </ThemeProvider>
+  );
 }
 
 export default App;
