@@ -6,6 +6,7 @@ import Home from './pages/index';
 import TreceProvider from './treceweb/treceContext';
 import {
 	CircularProgress,
+	CssBaseline,
 	LinearProgress,
 	Typography,
 } from '@mui/material';
@@ -15,6 +16,7 @@ import logoo from './assets/treceweb/Logo-Plasticos.png';
 function App() {
 	return (
 		<ThemeProvider theme={appTheme}>
+			<CssBaseline />
 			<TreceProvider>
 				<BrowserRouter>
 					<Routes>

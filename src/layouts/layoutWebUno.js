@@ -6,12 +6,12 @@ import PropTypes from 'prop-types';
 
 const LayoutWebUno = (props) => {
 	const classes = useStyles();
-	const { header, landing, body, footer } = props;
+	const { header, landing, footer } = props;
 	return (
 		<div>
 			<div className={classes.header}>{header}</div>
 			<div className={classes.landing}>{landing}</div>
-			<div className={classes.body}>{body}</div>
+			<div className={classes.body}>{props.children}</div>
 			<div className={classes.footer}>{footer}</div>
 		</div>
 	);
@@ -26,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
 		padding: 30,
 		paddingRight: '10%',
 		paddingLeft: '10%',
-		backgroundColor: 'red',
 	},
 	footer: { height: '20vh' },
 }));
@@ -34,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
 LayoutWebUno.propTypes = {
 	header: PropTypes.element.isRequired,
 	footer: PropTypes.element.isRequired,
-	body: PropTypes.element.isRequired,
+
 	landing: PropTypes.element.isRequired,
 };
 

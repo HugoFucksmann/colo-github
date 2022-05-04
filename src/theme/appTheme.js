@@ -74,7 +74,17 @@ appTheme.typography.h2 = {
 	color: '#5f6f81',
 };
 appTheme.typography.h4 = {
+	fontSize: '1.4em',
+	fontFamily: 'museoSlab',
+	color: '#5f6f81',
+};
+appTheme.typography.h5 = {
 	fontSize: '1.2em',
+	fontFamily: 'museoSlab',
+	color: '#5f6f81',
+};
+appTheme.typography.h6 = {
+	fontSize: '1em',
 	fontFamily: 'museoSlab',
 	color: '#5f6f81',
 };

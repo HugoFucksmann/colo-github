@@ -8,11 +8,11 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { Slide } from '@mui/material';
+
+import logo from '../assets/treceweb/Logo-Plasticos.png';
 
 function HideOnScroll(props) {
 	const { children, window } = props;
@@ -39,7 +39,7 @@ const HeaderTrece = (props) => {
 	}, []);
 
 	const handleScroll = () => {
-		if (window.pageYOffset > 120) {
+		if (window.pageYOffset > 180) {
 			setHeaderBack(true);
 		} else {
 			setHeaderBack(false);
@@ -52,25 +52,16 @@ const HeaderTrece = (props) => {
 				enableColorOnDark
 				elevation={!headerBack ? 0 : 3}
 				style={{
-					height: '9vh',
+					//height: '9vh',
 					backgroundColor: headerBack ? 'red' : 'transparent',
+					paddingLeft: 70,
 				}}
 			>
 				<Container maxWidth='xl'>
 					<Toolbar disableGutters>
-						<Typography
-							variant='h6'
-							noWrap
-							component='div'
-							sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-						>
-							{props.title}
-						</Typography>
-
 						<Box
 							sx={{
 								flexGrow: 1,
-
 								display: {
 									xs: 'flex',
 									md: 'none',
@@ -79,9 +70,6 @@ const HeaderTrece = (props) => {
 						>
 							<IconButton
 								size='large'
-								aria-label='account of current user'
-								aria-controls='menu-appbar'
-								aria-haspopup='true'
 								onClick={() => setAnchorElNav(true)}
 								color='inherit'
 							>
@@ -112,6 +100,7 @@ const HeaderTrece = (props) => {
 								))}
 							</Menu>
 						</Box>
+						<img src={props.logo} alt='logo' width={180} />
 						<Typography
 							variant='h6'
 							noWrap
@@ -153,7 +142,7 @@ const HeaderTrece = (props) => {
 };
 
 HeaderTrece.defaultProps = {
-	title: 'hola',
+	logo: logo,
 	pages: [
 		'Home',
 		'Productos',

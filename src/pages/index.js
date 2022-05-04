@@ -8,15 +8,21 @@ import HeaderTrece from './../treceweb/header';
 import { useContext } from 'react';
 import { TreceContext } from './../treceweb/treceContext';
 import CarouselFullScreen from '../componets/carouselFullScreen';
+import DivProductos from '../treceweb/divProductos';
 
 const Home = () => {
+	const { productosData } = useContext(TreceContext);
 	return (
 		<LayoutWebUno
 			header={<HeaderTrece />}
 			landing={<CarouselFullScreen />}
 			footer={<></>}
-			body={<DivQuienes />}
-		></LayoutWebUno>
+		>
+			<DivQuienes />
+			<br />
+			<br />
+			<DivProductos productosData={productosData} />
+		</LayoutWebUno>
 	);
 };
 
