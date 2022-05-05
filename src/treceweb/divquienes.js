@@ -1,6 +1,10 @@
 import styled from '@emotion/styled';
 import { Button, Typography } from '@mui/material';
 
+import BtnRounded from './../baseComp/btnRounded';
+import Title from './../baseComp/title';
+import { isMobile } from './../helpers/isMobile';
+
 //gradiant azul
 // background: "linear-gradient(to right bottom, #36EAEF, #6B0AC9)",
 
@@ -8,58 +12,22 @@ const DivQuienes = (props) => {
 	return (
 		<ContainerDiv>
 			<Title>{props.title}</Title>
-
 			<Typography variant='h4'>{props.subtitle}</Typography>
 			<br />
-			<Button
-				size='large'
-				variant='contained'
-				onClick={() => props.func()}
-				style={{
-					alignSelf: 'center',
-					width: 200,
-					borderRadius: 25,
-					background:
-						'linear-gradient(to right bottom, #244c83, #6ec4b0)',
-					//filter: "drop-shadow(3px 3px 5px #000)",
-				}}
-			>
-				{props.btnText}
-			</Button>
+
+			<BtnRounded click={props.func}>{props.btnText}</BtnRounded>
 		</ContainerDiv>
 	);
 };
 
-const Title = (props) => {
-	return (
-		<>
-			<Typography {...props} variant='h2'>
-				{props.children}
-			</Typography>
-			<div
-				style={{
-					borderTop: '4px solid #6ec4b0',
-					width: 36,
-					marginTop: -5,
-					borderRadius: 15,
-					alignSelf: 'center',
-				}}
-			/>
-			<br />
-		</>
-	);
-};
-
 const ContainerDiv = styled('div')(({ theme }) => ({
-	//height: '60vh',
 	display: 'flex',
 	flexDirection: 'column',
 	justifyContent: 'center',
 	textAlign: 'center',
-
-	marginRight: '22%',
-	marginLeft: '22%',
-	paddingTop: 100,
+	margin: 25,
+	marginRight: !isMobile ? '20%' : '4%',
+	marginLeft: !isMobile ? '20%' : '4%',
 }));
 
 DivQuienes.defaultProps = {

@@ -1,30 +1,35 @@
-import BodyLayout from "./../layouts/bodyLayout";
-import FullScreen from "./../layouts/fullScreen";
-import LayoutWebUno from "./../layouts/layoutWebUno";
-import BarraEncabezado from "./../componets/headers/barraEncabezado";
-import DivQuienes from "../treceweb/divquienes";
-import LandingTrece from "./../treceweb/landing";
-import HeaderTrece from "./../treceweb/header";
-import { useContext } from "react";
-import { TreceContext } from "./../treceweb/treceContext";
-import CarouselFullScreen from "../componets/carouselFullScreen";
-import DivProductos from "../treceweb/divProductos";
-import FooterTrece from "../treceweb/footer";
+import { useContext } from 'react';
+import { TreceContext } from './../treceweb/treceContext';
+
+import LayoutWebUno from './../layouts/layoutWebUno';
+import DivQuienes from '../treceweb/divquienes';
+import HeaderTrece from './../treceweb/header';
+import CarouselFullScreen from '../componets/carouselFullScreen';
+import DivProductos from '../treceweb/divProductos';
+import FooterTrece from '../treceweb/footer';
+import BtnScroll from '../baseComp/btnScrollToTop';
+import InstagramDiv from './../treceweb/bodyComp/instagramEmbed';
 
 const Home = () => {
-  const { productosData } = useContext(TreceContext);
-  return (
-    <LayoutWebUno
-      header={<HeaderTrece />}
-      landing={<CarouselFullScreen />}
-      footer={<FooterTrece />}
-    >
-      <DivQuienes />
-      <br />
-      <br />
-      <DivProductos productosData={productosData} />
-    </LayoutWebUno>
-  );
+	const { productosData } = useContext(TreceContext);
+	return (
+		<>
+			<LayoutWebUno
+				header={<HeaderTrece />}
+				landing={<CarouselFullScreen />}
+				footer={<FooterTrece />}
+			>
+				<DivQuienes />
+				<br />
+				<br />
+				<DivProductos productosData={productosData} />
+				<br />
+				<br />
+				<InstagramDiv />
+			</LayoutWebUno>
+			<BtnScroll />
+		</>
+	);
 };
 
 export default Home;
