@@ -1,10 +1,11 @@
-import InstagramFeed from 'react-ig-feed';
+import InstagramFeed from "react-ig-feed";
+import "react-ig-feed/dist/index.css";
 
-const InstagramDiv = () => {
-	return <InstagramFeed token={secret} counter='6' />;
+const token =
+  "EAAFrzBNW9DkBAO0F4ou4ER3SCspDNjoUIq2MueFn7pxBFsIBQl902i4aC9T7qAQNpZC8vGqSjAqZBnLno2NFWpuFswnfi3jZC38ZCYB7ZBgwc9q9sZALPAte38e981cK66NwcU7uzBHMC6Eg530NuD5Re7ZCZCJA32bzYG8Orjv2Q7nZC34ZC5n5jqjpkoZC6KbH0H7o5wcL2di5YqIiKt1aGxhLGA1hyjWjft4F8O8tcIly0nwKdBnlvsfJvaqZCcUMSv4ZD";
+
+const IgFeed = () => {
+  return <InstagramFeed token={token} counter="6" />;
 };
 
-const clientId = 399999218676793;
-const secret = '28d2026d6747672f3dbda2e5621b8e84';
-
-export default InstagramDiv;
+export default IgFeed;
