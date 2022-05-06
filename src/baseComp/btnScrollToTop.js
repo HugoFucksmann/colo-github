@@ -23,7 +23,7 @@ const BtnScroll = () => {
       behavior: "smooth",
     });
   };
-  console.log("homa ", document.body.scrollHeight);
+
   if (showBtn)
     return (
       <BtnStyled onClick={() => goToTop()}>

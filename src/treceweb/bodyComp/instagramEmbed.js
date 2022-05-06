@@ -1,14 +1,50 @@
-import InstagramFeed from "react-ig-feed";
-import "react-ig-feed/dist/index.css";
+import React, { useState, useEffect } from "react";
+import styled from "@emotion/styled";
 
-const tokenu =
-  "EAAFrzBNW9DkBADycKZB7RpRKLt7NvMII3Iv96fDZCc2l5xF699gX8lG6uO1Pk5qZCNnck5195UOsManuIlicT2GBT2StwI6qRDbXiIpq3jzmNxKBQIavx5MM6UAPwa5pSZAz3MlMIX4q1WACwZBM5PN545Bu9OOWQkTglKd3L8Hh6PnT9sY6qnZB2AF9GVP5xuKMFLmdaXywCdIfth8TuZChWeoE8E3g55c3Cm4L3KMQvmpOuhHLF4BQ4PYo1ib9toZD";
+const igAccountID = 1595820179;
+const appID = 399999218676793
 
-const tokenapp =
-  "EAAFrzBNW9DkBAPd8cx1Uzc2KWDTpzIWhWn1ZBHcRlQiBQLBiE819v1YaEHGsBcb0uEPdzmq6o06s0u16CBS7vDSZAFfxEMJe9RS3PvToXHaEYWsaIFslyUgQwUZB9gWRXWs67h1lXtQEEyhiFJZCoB7GwWBi9KZAdSki9flOUZB19WjA3c01ZBNFB4KZCND305cf8ytSbEHw5qgDZBCciukIrK06J8UPYGZCEZD";
 
-const IgFeed = () => {
-  return <InstagramFeed token={tokenapp} counter="6" />;
+const Card = styled.img`
+  justify-self: center;
+  width: 300px;
+  height: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+`;
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
+`;
+
+const url =
+  'https://www.instagram.com/graphql/query/?query_hash=399999218676793&variables={"id":1595820179,"first":6}';
+const Insta = () => {
+  const [insta, setInsta] = useState([]);
+  useEffect(() => {
+    fetch(url)
+      .then((data) => data.json())
+      .then((data) => {
+        console.log("data ", data);
+        const photosArray = data.data.user.edge_owner_to_timeline_media.edges;
+        setInsta(photosArray);
+      });
+  }, []);
+  return (
+    <Grid>
+      {insta.map((photo) => (
+        <Card src={photo.node.display_url} key={photo.node.id} />
+      ))}
+    </Grid>
+  );
 };
+export default Insta;
 
-export default IgFeed;
+
+https://api.instagram.com/oauth/authorize
+  ?client_id={"1595820179"}
+  &redirect_uri={"https://domomicaela.herokuapp.com/"}
+  &scope={scope}
+  &response_type=code
+  &state={state} 
