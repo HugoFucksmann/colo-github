@@ -17,21 +17,14 @@ const Home = () => {
 		<>
 			<LayoutWebUno
 				header={<HeaderTrece />}
-				//landing={<CarouselFullScreen />}
-				landing={
-					<LoopContent>
-						<LoopC>
-							<InfiniteLoopImg />
-						</LoopC>
-					</LoopContent>
-				}
+				landing={<CarouselFullScreen />}
 				footer={<FooterTrece />}
 			>
-				{/* 	<DivQuienes />
+				<DivQuienes />
 				<br />
 				<br />
 				<DivProductos productosData={productosData} />
-				<br /> */}
+				<br />
 
 				<br />
 			</LayoutWebUno>
