@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "@emotion/styled";
 
 const igAccountID = 1595820179;
-const appID = 399999218676793
-
+const appID = 399999218676793;
 
 const Card = styled.img`
   justify-self: center;
@@ -40,11 +39,3 @@ const Insta = () => {
   );
 };
 export default Insta;
-
-
-https://api.instagram.com/oauth/authorize
-  ?client_id={"1595820179"}
-  &redirect_uri={"https://domomicaela.herokuapp.com/"}
-  &scope={scope}
-  &response_type=code
-  &state={state} 
