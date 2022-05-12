@@ -6,9 +6,6 @@ import Home from './pages/index';
 import TreceProvider from './treceweb/treceContext';
 import { CssBaseline } from '@mui/material';
 
-import WordFoggy from './componets/textEffect/wordfoggy/wordFoggy';
-import FullCardLanding from './layouts/fullCardLanding';
-
 function App() {
 	return (
 		<ThemeProvider theme={appTheme}>
@@ -23,9 +20,5 @@ function App() {
 		</ThemeProvider>
 	);
 }
-
-const Prueba = (props) => {
-	return <div>{props.children}</div>;
-};
 
 export default App;

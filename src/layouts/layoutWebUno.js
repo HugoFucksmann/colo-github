@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 		height: '9vh',
 		position: 'absolute',
 	},
-	landing: { height: '100vh' },
+	landing: { maxHeight: '100vh' },
 	body: {
 		padding: 30,
 		paddingRight: !isMobile ? '10%' : '2%',

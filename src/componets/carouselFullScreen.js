@@ -25,11 +25,7 @@ export default function CarouselFullScreen(props) {
 			}}
 		>
 			<Swiper
-				//direction={'row'}
 				slidesPerView={1}
-				//spaceBetween={30}
-				//effect={"fade"}
-				//mousewheel={true}
 				pagination={{
 					clickable: true,
 				}}
