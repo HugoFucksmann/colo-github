@@ -2,9 +2,6 @@ import { makeStyles } from '@mui/styles';
 import PropTypes from 'prop-types';
 import { isMobile } from './../helpers/isMobile';
 
-//* props del componente
-//? Landing, header, body, footer
-
 const LayoutWebUno = (props) => {
 	const classes = useStyles();
 	const { header, landing, footer } = props;
