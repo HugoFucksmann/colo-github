@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 
 const WordFoggy = () => {
 	useEffect(() => {
-		console.log('ddd');
 		all();
 	}, []);
 
@@ -105,12 +104,12 @@ function all() {
 		elts.text1.style.opacity = '0%';
 	}
 
-	let frames = 0;
+	let frames = 300;
+	let c = 0;
 	// Animation loop, which is called every frame.
 	function animate() {
-		//? 250 frames aprox 1 vuelta, quitar para infinito
-		if (frames < 350) {
-			frames++;
+		if (c < frames) {
+			c++;
 			requestAnimationFrame(animate);
 		}
 
