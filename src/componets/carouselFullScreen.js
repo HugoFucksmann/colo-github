@@ -1,15 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// Import Swiper React components
+
 import { Swiper, SwiperSlide } from 'swiper/react';
-// import required modules
-import { EffectFade, Mousewheel, Pagination } from 'swiper';
-// Import Swiper styles
+
+import { Autoplay, EffectFade } from 'swiper';
+
 import 'swiper/css';
 import 'swiper/css/pagination';
 import './styles.css';
+import LandingJor from './../jorWeb/landingJor';
 
 export default function CarouselFullScreen(props) {
+	const { data } = props;
 	return (
 		<div
 			{...props}
@@ -20,16 +22,18 @@ export default function CarouselFullScreen(props) {
 		>
 			<Swiper
 				slidesPerView={1}
-				pagination={{
-					clickable: true,
+				loop={true}
+				navigation={true}
+				effect={'fade'}
+				modules={[EffectFade, Autoplay]}
+				autoplay={{
+					delay: 2500,
+					disableOnInteraction: false,
 				}}
-				modules={[EffectFade, Mousewheel, Pagination]}
 				className='mySwiper'
 			>
-				{props.landingData.map((swipData, i) => (
-					<SwiperSlide key={i}>
-						<>{swipData}</>
-					</SwiperSlide>
+				{data.map((swipData, i) => (
+					<SwiperSlide key={i}>fsfsf</SwiperSlide>
 				))}
 			</Swiper>
 		</div>
@@ -37,10 +41,9 @@ export default function CarouselFullScreen(props) {
 }
 
 CarouselFullScreen.propTypes = {
-	landingData: PropTypes.array.isRequired,
-	ComponentLand: PropTypes.node.isRequired,
+	data: PropTypes.array.isRequired,
 };
 
 CarouselFullScreen.defaultProps = {
-	landingData: [1, 2, 3],
+	data: [1, 2, 3, 4],
 };

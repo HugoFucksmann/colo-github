@@ -1,12 +1,7 @@
 import React from 'react';
-import Snow from '../componets/backgroundAnimated/snow/snow';
-import FlyUpText from '../componets/textEffect/flyUpText/flyUpText';
+import CarouselFullScreen from './../componets/carouselFullScreen';
 const Home = () => {
-	return (
-		<div style={{ backgroundColor: 'lightcoral', height: '100vh' }}>
-			hola
-		</div>
-	);
+	return <CarouselFullScreen />;
 };
 
 export default Home;
